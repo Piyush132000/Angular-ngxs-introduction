@@ -1,0 +1,20 @@
+<div>
+    <div style="display: flex; flex-direction: row; width: 600px; align-items: center;">
+        <div>
+            <input class="input" type="text" placeholder="enter name" #name><br>
+            <input class="input" type="url" placeholder="enter url" #url><br>
+        </div>
+        <button class="button" (click)="addTutorial(name.value ,url.value )">Add tutorial</button>
+
+    </div>
+
+    <div style="display: flex" *ngFor="let tut of tutorialInfo ">
+        <div class="card">
+            <div>
+                <h3>{{tut.name}}</h3>
+                <h3>{{tut.url}}</h3>
+            </div>
+            <button class="button" (click)="removeTutorial(tut.name)">remove</button>
+        </div>
+    </div>
+</div>
